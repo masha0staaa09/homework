@@ -13,3 +13,25 @@
 1. Установите Python.
 2. Клонируйте репозиторий. (git clone https://github.com/masha0staaa09/homework.git)
 3. Перейдите в папку проекта.
+## Тестирование
+Для запуска тестов используйте:
+```
+poetry run pytest
+```
+Для проверки покрытия кода используйте:
+```
+poetry run pytest --cov=src --cov-report=html
+```
+Для проверки кода с помощью Flake8:
+```
+poetry run flake8 src tests
+```
+Для проверки типов с помощью mypy:
+```
+poetry run mypy src
+```
+Для проверки сортировки импортов с помощью isort:
+```
+poetry run isort --check-only src tests
+```
+Покрытие проекта тестами составляет 100%.
