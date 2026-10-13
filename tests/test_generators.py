@@ -42,6 +42,7 @@ def transactions():
         },
     ]
 
+
 @pytest.mark.parametrize(
     "currency, expected_ids",
     [
