@@ -4,8 +4,7 @@ from src.masks import get_mask_account, get_mask_card_number
 
 
 def mask_account_card(info: str) -> str:
-    """Функция, которая умеет обрабатывать информацию
-    как о картах, так и о счетах"""
+    """Маскирует номнр банковской карты или счета"""
     parts = info.split()
     name = " ".join(parts[:-1])
     number = parts[-1]
@@ -18,6 +17,6 @@ def mask_account_card(info: str) -> str:
 
 
 def get_date(date: str) -> str:
-    """Возвращает дату в фотмате ДД.ММ.ГГГГ"""
+    """Возвращает дату в формате ДД.ММ.ГГГГ"""
     date_obj = datetime.fromisoformat(date)
     return date_obj.strftime("%d.%m.%Y")
