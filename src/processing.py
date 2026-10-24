@@ -4,12 +4,17 @@ from typing import Dict, List
 
 
 def process_bank_search(data: list[dict], search: str) -> list[dict]:
-    """Ищет банковские операции по строке в описании."""
+    """Ищет банковские операции по категории или описанию."""
     result = []
+
     for transaction in data:
         description = transaction.get("description", "")
+        category = transaction.get("category", "")
 
-        if re.search(re.escape(search), description, re.IGNORECASE):
+        if (
+            re.search(re.escape(search), description, re.IGNORECASE)
+            or re.search(re.escape(search), category, re.IGNORECASE)
+        ):
             result.append(transaction)
 
     return result

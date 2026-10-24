@@ -4,7 +4,7 @@ from src.masks import get_mask_account, get_mask_card_number
 
 
 def mask_account_card(info: str) -> str:
-    """Маскирует номнр банковской карты или счета"""
+    """Маскирует номер банковской карты или счета"""
     parts = info.split()
     name = " ".join(parts[:-1])
     number = parts[-1]
